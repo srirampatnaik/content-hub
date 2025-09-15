@@ -1,93 +1,87 @@
-📚 Knowledge Hub
-A lightweight content-focused knowledge hub built with Next.js, where users can:
+# 📚 Content Hub
 
-✍️ Submit new content requests (e.g., “Write a guide on Next.js SEO”)
+The **Content Hub** is a lightweight content-focused platform that works like a mini CMS + content explorer.  
+It allows users to request new guides, browse existing ones, and explore richly written content with smooth UI transitions.  
 
-📰 Browse requested content in a live-updating feed
+The project is designed to showcase **modern React/Next.js development practices** including data fetching, validation, animations, and real-time updates.
 
-⚡ Receive real-time updates via Server-Sent Events (SSE)
+---
 
-📖 Explore richly generated guide pages (Markdown/MDX via Contentlayer)
+## 🎯 Goal
+The app was built to:
+- ✍️ Let users submit **new content requests** (e.g., *“Write a guide on Next.js SEO”*).  
+- 📰 Display a **content feed** of requested guides.  
+- ⚡ Update the feed in **real time** using Server-Sent Events (SSE).  
+- 📖 Publish guides as static pages (Markdown/MDX with Contentlayer).  
+- 🎨 Provide a **smooth, interactive user experience** using Framer Motion animations.  
 
-🎨 Enjoy smooth animations and interactive UI
+In short, it feels like a **knowledge-sharing platform** rather than just a form and list demo.  
 
-Deployed on Vercel 🚀.
+---
 
-🔗 Live Demo & Repo
-Live App: https://knowledge-hub.vercel.app
+## 🛠️ Tech Stack
+This project brings together several modern tools:
 
-GitHub Repo: https://github.com/your-username/knowledge-hub
+- **Next.js (App Router)** → Framework & SEO-friendly routing  
+- **TanStack Query** → Data fetching and caching  
+- **Axios** → REST API requests + SSE handling  
+- **Zod** → Validation for forms and API responses  
+- **React Hook Form** → Content request submission form  
+- **Tailwind CSS** → Responsive, modern UI design  
+- **Redux Toolkit** → Global state (theme, preferences, user)  
+- **Prisma ORM** → Database layer (SQLite for local dev, Postgres for production)  
+- **Contentlayer** → Markdown/MDX guide pages  
+- **Framer Motion** → Animations (page transitions, cards, skeletons)  
 
-⚙️ Tech Stack
-Framework: Next.js (App Router)
+---
 
-Database: SQLite (Prisma ORM)
+## 🚀 Features
 
-Data Fetching: TanStack Query + Axios
+### 🏠 Content Feed
+- Displays all requested content (`GET /api/content`).  
+- Each card shows **title, description, and status** (“Requested” or “Published”).  
+- New items appear with **Framer Motion animations**.  
+- Real-time updates through **SSE stream** (`/api/content/stream`).  
 
-Forms & Validation: React Hook Form + Zod
+### 📝 Submit Request Form
+- Fields: `title`, `description`, `category`.  
+- Built with **React Hook Form + Zod**.  
+- Posts via `POST /api/content`.  
+- On success → clears form + animated success message.  
 
-State Management: Redux Toolkit
+### 📖 Guide Pages
+- Each published request generates a static guide at `/guides/[slug]`.  
+- Powered by **Contentlayer (Markdown/MDX)**.  
+- Example: “Next.js SEO” → `/guides/nextjs-seo`.  
 
-Styling: Tailwind CSS
+### 🌐 Global State
+Managed via **Redux Toolkit**:  
+- Theme toggle (dark/light).  
+- Reading mode (compact/detailed).  
+- Username stored globally.  
 
-Animations: Framer Motion
+### 🎨 UI & Styling
+- Tailwind CSS for consistent, responsive styling.  
+- Framer Motion for:
+  - Page transitions  
+  - Card hover/expand effects  
+  - Loading skeletons  
 
-Content: Contentlayer (Markdown/MDX for guides)
+---
 
-🚀 Features
-🏠 Home Page – Content Feed
-Displays all requested content (GET /api/content)
+## 📦 API Endpoints
+The app uses Next.js API routes:  
 
-Animations for new entries (Framer Motion)
+- `GET /api/content` → Fetch all content requests.  
+- `POST /api/content` → Submit a new content request.  
+- `GET /api/content/stream` → Real-time updates (SSE).  
 
-Real-time updates via SSE (/api/content/stream)
+---
 
-📝 Submit Content Request
-Form with title, description, category
+## ⚡ Getting Started (Local Development)
 
-Built using React Hook Form + Zod validation
-
-Posts to API (POST /api/content)
-
-Success state with smooth animation
-
-📖 Guide Pages
-Published requests → Markdown/MDX guides
-
-Automatically available at /guides/[slug]
-
-🌐 Global User State
-Theme (dark/light)
-
-Reading mode (compact/detailed)
-
-Username (stored via Redux Toolkit)
-
-🛠️ Local Development
-1. Clone the repo
+### 1. Clone the repo
+```bash
 git clone https://github.com/your-username/knowledge-hub.git
 cd knowledge-hub
-2. Install dependencies
-npm install
-3. Setup environment
-Create a .env file in the root:
 
-DATABASE_URL="file:./dev.db"
-4. Setup Prisma & SQLite
-npx prisma migrate dev --name init
-npx prisma generate
-5. Run the app
-npm run dev
-App will be running at: http://localhost:3000 🎉
-
-📦 Deployment
-Hosted on Vercel with GitHub integration
-
-Auto-deploys on git push to main
-
-📸 Screenshots (Optional)
-(Add images of your app UI once deployed)
-
-👨‍💻 Author
-Built by Sriram ✨
