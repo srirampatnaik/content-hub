@@ -82,3 +82,6 @@ The app uses Next.js API routes:
 - Hosted on Vercel
 - Auto-deploys whenever code is pushed to GitHub (main branch)
 - Works best with Postgres (Neon/Supabase) for persistent database storage
+
+
+Built by Sriram
