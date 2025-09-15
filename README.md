@@ -1,73 +1,93 @@
-# Welcome to your Lovable project
+📚 Knowledge Hub
+A lightweight content-focused knowledge hub built with Next.js, where users can:
 
-## Project info
+✍️ Submit new content requests (e.g., “Write a guide on Next.js SEO”)
 
-**URL**: https://lovable.dev/projects/af1a80cc-d3d0-4845-a743-ea3feae6694e
+📰 Browse requested content in a live-updating feed
 
-## How can I edit this code?
+⚡ Receive real-time updates via Server-Sent Events (SSE)
 
-There are several ways of editing your application.
+📖 Explore richly generated guide pages (Markdown/MDX via Contentlayer)
 
-**Use Lovable**
+🎨 Enjoy smooth animations and interactive UI
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/af1a80cc-d3d0-4845-a743-ea3feae6694e) and start prompting.
+Deployed on Vercel 🚀.
 
-Changes made via Lovable will be committed automatically to this repo.
+🔗 Live Demo & Repo
+Live App: https://knowledge-hub.vercel.app
 
-**Use your preferred IDE**
+GitHub Repo: https://github.com/your-username/knowledge-hub
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+⚙️ Tech Stack
+Framework: Next.js (App Router)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Database: SQLite (Prisma ORM)
 
-Follow these steps:
+Data Fetching: TanStack Query + Axios
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Forms & Validation: React Hook Form + Zod
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+State Management: Redux Toolkit
 
-# Step 3: Install the necessary dependencies.
-npm i
+Styling: Tailwind CSS
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Animations: Framer Motion
+
+Content: Contentlayer (Markdown/MDX for guides)
+
+🚀 Features
+🏠 Home Page – Content Feed
+Displays all requested content (GET /api/content)
+
+Animations for new entries (Framer Motion)
+
+Real-time updates via SSE (/api/content/stream)
+
+📝 Submit Content Request
+Form with title, description, category
+
+Built using React Hook Form + Zod validation
+
+Posts to API (POST /api/content)
+
+Success state with smooth animation
+
+📖 Guide Pages
+Published requests → Markdown/MDX guides
+
+Automatically available at /guides/[slug]
+
+🌐 Global User State
+Theme (dark/light)
+
+Reading mode (compact/detailed)
+
+Username (stored via Redux Toolkit)
+
+🛠️ Local Development
+1. Clone the repo
+git clone https://github.com/your-username/knowledge-hub.git
+cd knowledge-hub
+2. Install dependencies
+npm install
+3. Setup environment
+Create a .env file in the root:
+
+DATABASE_URL="file:./dev.db"
+4. Setup Prisma & SQLite
+npx prisma migrate dev --name init
+npx prisma generate
+5. Run the app
 npm run dev
-```
+App will be running at: http://localhost:3000 🎉
 
-**Edit a file directly in GitHub**
+📦 Deployment
+Hosted on Vercel with GitHub integration
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Auto-deploys on git push to main
 
-**Use GitHub Codespaces**
+📸 Screenshots (Optional)
+(Add images of your app UI once deployed)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/af1a80cc-d3d0-4845-a743-ea3feae6694e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+👨‍💻 Author
+Built by Sriram ✨
